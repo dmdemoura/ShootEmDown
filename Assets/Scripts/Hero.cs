@@ -7,7 +7,6 @@ public class Hero : MonoBehaviour
     [SerializeField] private LayerMask enemyMask;
     [Tooltip("Max velocity for movement")]
     [SerializeField] private Vector2 maxVelocity;
-    [SerializeField] private Camera cam;
     [SerializeField] private GameObject projectilePrefab;
     [Tooltip("Seconds between shots")]
     [SerializeField] private float fireRate;
@@ -19,7 +18,7 @@ public class Hero : MonoBehaviour
     {
         myRigidbody2D = GetComponent<Rigidbody2D>();
         myBoxCollider2d = GetComponent<BoxCollider2D>();
-        cameraBounds = new Bounds(cam.transform.position, new Vector3(cam.orthographicSize * ((float) cam.pixelWidth / (float) cam.pixelHeight) *2, cam.orthographicSize * 2));
+        cameraBounds = new Bounds(Camera.main.transform.position, new Vector3(Camera.main.orthographicSize * ((float) Camera.main.pixelWidth / (float) Camera.main.pixelHeight) *2, Camera.main.orthographicSize * 2));
         InvokeRepeating("Fire", fireRate, fireRate);
     }
     private void Update()

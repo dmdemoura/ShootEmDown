@@ -9,7 +9,9 @@ public class menuInicial : MonoBehaviour {
 	public GameObject uiDificuldade;
 	public void buttonStart(){
 		for(int i=0;i<10;i++){
-			PlayerPrefs.SetInt("arma"+i, 0);
+			for(int j=0;j<10;j++){
+				PlayerPrefs.SetInt("arma"+i+"-"+j, 0);
+			}
 		}
 		PlayerPrefs.SetInt("level",-1);
 		SceneManager.LoadScene("ccena");
