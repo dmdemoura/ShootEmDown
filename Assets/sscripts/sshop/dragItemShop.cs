@@ -33,14 +33,18 @@ public class dragItemShop : MonoBehaviour, IDragHandler,IEndDragHandler, IDropHa
 			RectTransform invPanel =dpIS[i].transform as RectTransform;
 			if(RectTransformUtility.RectangleContainsScreenPoint(invPanel,Input.mousePosition)){
 				Debug.Log(dropped.armaID);
+				invPanel.gameObject.GetComponent<Image>().sprite = gameObject.GetComponent<Image>().sprite;
 				boss.colocarArma(dropped.armaID,dpIS[i].slotId,dropped.armaType);
 			}
 		}
 
 	}
 
-	void Start(){
+	public void atualizarDpIS(){
 		dpIS = FindObjectsOfType<dropItemShop>();
+	}
+	void Start(){
+		atualizarDpIS();
 		trans = GetComponent<Transform>();
 		posInicial = trans.position;
 		boss = FindObjectOfType<construindoNave>();

@@ -11,6 +11,7 @@ public class menuInicial : MonoBehaviour {
 		for(int i=0;i<10;i++){
 			PlayerPrefs.SetInt("arma"+i, 0);
 		}
+		PlayerPrefs.SetInt("level",-1);
 		SceneManager.LoadScene("ccena");
 	}
 

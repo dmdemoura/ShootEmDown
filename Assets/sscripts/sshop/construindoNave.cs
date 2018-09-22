@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class construindoNave : MonoBehaviour {
 
 	public modelo[] carcacas;
@@ -11,22 +12,26 @@ public class construindoNave : MonoBehaviour {
 			PlayerPrefs.SetInt("modeloAtual",0);
 		}
 
-		int aux = 0;
 		for(int i= 0;i<carcacas.Length;i++){
+
+			//procurando o index máximo das armas
+			for(int j=0;j<carcacas[i].tipoArma.Length;j++){
+				if(PlayerPrefs.GetInt("arma"+i+"-"+j) < 0)
+					PlayerPrefs.SetInt("arma"+i+"-"+j,0);
+				else{
+					GameObject armaslot = GameObject.Find("armaSlot"+i+j);
+					GameObject dragItem = GameObject.Find("dragItem0"+PlayerPrefs.GetInt("arma"+i+"-"+j));
+					if(armaslot == null || dragItem == null)
+						continue;
+					armaslot.gameObject.GetComponent<Image>().sprite = dragItem.gameObject.GetComponent<Image>().sprite;
+				}
+			}
 			//desativando todos os slots não da carcaça atual
 			if(i!=PlayerPrefs.GetInt("modeloAtual"))
 				carcacas[i].ui.SetActive(false);
-
-			//procurando o index máximo das armas
-			if(carcacas[i].tipoArma.Length > aux)
-				aux = carcacas[i].tipoArma.Length;
 		}
 
-		//colocando valor inicial as armas caso precise
-		for(int i=0;i<aux;i++){
-			if(PlayerPrefs.GetInt("arma"+i) < 0)
-				PlayerPrefs.SetInt("arma"+1, 0);
-		}
+
 	}
 
 	//trocando carcaça
@@ -34,13 +39,16 @@ public class construindoNave : MonoBehaviour {
 		carcacas[PlayerPrefs.GetInt("modeloAtual")].ui.SetActive(false);
 		PlayerPrefs.SetInt("modeloAtual",modeloId);
 		carcacas[PlayerPrefs.GetInt("modeloAtual")].ui.SetActive(true);
+		for(int i=0;i<6;i++){
+			GameObject.Find("dragItem0"+i).GetComponent<dragItemShop>().atualizarDpIS();
+		}
 	}
 
 	public void colocarArma(int armaId,int slotId, int tipoArma){//caso 0, retira arma
-		Debug.Log("aaa");
+		//Debug.Log("aaa");
 		int modAtu = PlayerPrefs.GetInt("modeloAtual");
 		if(carcacas[modAtu].tipoArma[slotId] == tipoArma){
-			PlayerPrefs.SetInt("arma"+slotId, armaId);
+			PlayerPrefs.SetInt("arma"+PlayerPrefs.GetInt("modeloAtual")+"-"+slotId, armaId);
 		}
 	}
 	
@@ -51,7 +59,7 @@ public class construindoNave : MonoBehaviour {
 		for(int i=0;i<carcacas[aux].tipoArma.Length;i++){
 			Debug.Log(PlayerPrefs.GetInt("arma"+i));
 		}
-
+		PlayerPrefs.SetInt("level",PlayerPrefs.GetInt("level")+1);
 		SceneManager.LoadScene("ccena2");
 	}
 

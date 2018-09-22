@@ -13,8 +13,7 @@ public class carcaca : MonoBehaviour {
 			Destroy(gameObject);
 		lista = FindObjectOfType<listaArmas>();
 		for(int i=0;i<slot.Length;i++){
-			Debug.Log(PlayerPrefs.GetInt("arma"+i));
-			GameObject a =lista.l[PlayerPrefs.GetInt("arma"+i)];
+			GameObject a =lista.l[PlayerPrefs.GetInt("arma"+carcacaId+"-"+i)];
 			Instantiate(a,slot[i].pos.transform);
 			slot[i].arma = Instantiate(a,slot[i].pos.transform).GetComponent<armaBase>();
 		}
