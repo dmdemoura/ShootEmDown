@@ -6,6 +6,13 @@ public class Health : MonoBehaviour
     [SerializeField] private int health;
     [SerializeField] private int maxHealth;
     public event EventHandler Death;
+    public float Percent
+    {
+        get
+        {
+            return (float) health / (float) maxHealth;
+        }
+    }
     public int HitPoints
     {
         get
