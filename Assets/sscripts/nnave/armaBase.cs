@@ -8,7 +8,7 @@ public class armaBase : MonoBehaviour {
 	protected bool pdAtirar = true;
 	
 
-	public  void atirar (){
+	public void atirar (){
 		if(!pdAtirar)
 			return;
 
@@ -25,7 +25,4 @@ public class armaBase : MonoBehaviour {
         
     }
 
-    public void update(){
-        
-    }
 }
