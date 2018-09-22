@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/sscenes/mmenu.unity
     guid: f314844acdf41294db5f75a759fb3205
+  - enabled: 1
+    path: Assets/Scenes/dmTest2.unity
+    guid: 075d339ceda85439abe31edad2d71e4d
   m_configObjects: {}

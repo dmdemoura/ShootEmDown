@@ -60,7 +60,7 @@ public class construindoNave : MonoBehaviour {
 			Debug.Log(PlayerPrefs.GetInt("arma"+i));
 		}
 		PlayerPrefs.SetInt("level",PlayerPrefs.GetInt("level")+1);
-		SceneManager.LoadScene("ccena2");
+		SceneManager.LoadScene("dmTest2");
 	}
 
 	public void entrarMenuInicial(){

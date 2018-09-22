@@ -631,7 +631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carcacas:
-  - tipoArma: 000000000000000000000000000000000000000000000000
+  - tipoArma: 0000000000000000000000000000000000000000000000000000000000000000
     ui: {fileID: 771769742}
   - tipoArma: 000000000000000000000000000000000000000000000000
     ui: {fileID: 309455809}
@@ -2030,7 +2030,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 2fca3f7d8ed2d614b8db44960534ff19, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b2b6dce5826ac439684da3b895a88b73, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2093,7 +2093,7 @@ MonoBehaviour:
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 60, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2108,8 +2108,8 @@ Canvas:
   m_GameObject: {fileID: 2128903847}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1816744410}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -2217,7 +2217,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 4ec3d3a38e0e0cc4f83fa87c66457b52, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 64e687a5f3ab643e2b01a605494d90dd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
