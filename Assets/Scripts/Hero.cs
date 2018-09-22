@@ -7,28 +7,28 @@ public class Hero : MonoBehaviour
     [SerializeField] private LayerMask enemyMask;
     [Tooltip("Max velocity for movement")]
     [SerializeField] private Vector2 maxVelocity;
+    [SerializeField] private Camera cam;
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private ProjectileData projectileData;
+    [Tooltip("Seconds between shots")]
+    [SerializeField] private float fireRate;
     private Rigidbody2D myRigidbody2D;
     private BoxCollider2D myBoxCollider2d;
-    [SerializeField] private Camera cam;
-    // [SerializeField] private GameObject prefab;
     private Bounds cameraBounds;
     private void Start()
     {
         myRigidbody2D = GetComponent<Rigidbody2D>();
         myBoxCollider2d = GetComponent<BoxCollider2D>();
         cameraBounds = new Bounds(cam.transform.position, new Vector3(cam.orthographicSize * ((float) cam.pixelWidth / (float) cam.pixelHeight) *2, cam.orthographicSize * 2));
-        // Debug.Log("vboudns:" + cameraBounds);
-        // Debug.Log(myBoxCollider2d.size);
+        InvokeRepeating("Fire", fireRate, fireRate);
     }
     private void Update()
     {
         AvoidDanger();
-        // if (Input.GetMouseButtonDown(0))
-        // {
-        //     Vector3 position = cam.ScreenToWorldPoint(Input.mousePosition);
-        //     position = new Vector3(position.x, position.y, 0f);
-        //     Instantiate(prefab, position, Quaternion.identity);
-        // }
+    }
+    private void Fire()
+    {
+        Projectile.Fire(projectilePrefab, projectileData, transform.position, transform.rotation);
     }
     private float DistanceToDanger(float xOffset)
     {
