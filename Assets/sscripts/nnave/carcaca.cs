@@ -4,10 +4,13 @@ using UnityEngine;
 
 //carcaça do boss
 public class carcaca : MonoBehaviour {
+	public int carcacaId;
 	public float maxHp;
 	private listaArmas lista;
 	public slotArma[] slot;//slots das armas
 	void Start () {
+		if(PlayerPrefs.GetInt("modeloAtual") != carcacaId)
+			Destroy(gameObject);
 		lista = FindObjectOfType<listaArmas>();
 		for(int i=0;i<slot.Length;i++){
 			Debug.Log(PlayerPrefs.GetInt("arma"+i));
@@ -22,6 +25,7 @@ public class carcaca : MonoBehaviour {
 			for(int i=0;i<slot.Length;i++){
 				if(slot[i].arma == null)
 					Debug.Log("OQUE");
+					Debug.Log("atirou");
 				slot[i].arma.atirar();
 		}
 	}

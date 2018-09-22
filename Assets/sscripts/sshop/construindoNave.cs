@@ -15,7 +15,7 @@ public class construindoNave : MonoBehaviour {
 		for(int i= 0;i<carcacas.Length;i++){
 			//desativando todos os slots não da carcaça atual
 			if(i!=PlayerPrefs.GetInt("modeloAtual"))
-				GameObject.Find("carcaca"+PlayerPrefs.GetInt("modeloAtual")).SetActive(false);
+				carcacas[i].ui.SetActive(false);
 
 			//procurando o index máximo das armas
 			if(carcacas[i].tipoArma.Length > aux)
@@ -31,10 +31,9 @@ public class construindoNave : MonoBehaviour {
 
 	//trocando carcaça
 	public void trocarmodelo(int modeloId){
-
-		GameObject.Find("carcaca"+PlayerPrefs.GetInt("modeloAtual")).SetActive(false);
+		carcacas[PlayerPrefs.GetInt("modeloAtual")].ui.SetActive(false);
 		PlayerPrefs.SetInt("modeloAtual",modeloId);
-		GameObject.Find("carcaca"+PlayerPrefs.GetInt("modeloAtual")).SetActive(true);
+		carcacas[PlayerPrefs.GetInt("modeloAtual")].ui.SetActive(true);
 	}
 
 	public void colocarArma(int armaId,int slotId, int tipoArma){//caso 0, retira arma
@@ -45,7 +44,8 @@ public class construindoNave : MonoBehaviour {
 		}
 	}
 	
-	void sairCena(){
+	//entrar na batalha
+	public void entrarBatalha(){
 		int aux = PlayerPrefs.GetInt("modeloAtual");
 		Debug.Log(aux);
 		for(int i=0;i<carcacas[aux].tipoArma.Length;i++){
@@ -55,9 +55,15 @@ public class construindoNave : MonoBehaviour {
 		SceneManager.LoadScene("ccena2");
 	}
 
+	public void entrarMenuInicial(){
+		SceneManager.LoadScene("mmenu");	
+	}
+
 	void Update(){
+		if(Input.GetKeyDown(KeyCode.Escape))
+			trocarmodelo((PlayerPrefs.GetInt("modeloAtual")+1) % 2);
 		 if (Input.GetKeyDown("space"))
-		 	sairCena();
+		 	entrarBatalha();
 	}
 
 }
@@ -65,6 +71,6 @@ public class construindoNave : MonoBehaviour {
 [System.Serializable]
 public class modelo {
     public int[] tipoArma;
-
+	public GameObject ui;
 }
 
