@@ -12,8 +12,8 @@ public class Projectile : DamageOnHit
     {
         Init((DamageOnHitData) projectileData);
         Rigidbody2D rigidbody2D = GetComponent<Rigidbody2D>();
-        if (rigidbody2D)
-            rigidbody2D.velocity = new Vector2(0f, projectileData.velocity);
+            if (rigidbody2D)
+            rigidbody2D.velocity = Quaternion.Euler(0f, 0f, -90f) * transform.rotation * new Vector2(0f, projectileData.velocity) ;
         else
             Debug.Log("Projectile has no Rigidbody component");       
     }
