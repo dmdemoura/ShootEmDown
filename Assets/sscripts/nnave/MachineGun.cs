@@ -5,7 +5,6 @@ using UnityEngine;
 public class MachineGun : armaBase {
 
 	[SerializeField] GameObject bullet;
-	[SerializeField] ProjectileData bulletData;
 	[SerializeField]float shootingSpeed, bulletSpeed;
 	Transform target;
 
@@ -33,10 +32,9 @@ public class MachineGun : armaBase {
 	{
 		Debug.Log("Take this!");
 
-		Projectile.Fire(bullet, bulletData, transform.position, transform.rotation);
-		// GameObject currentBullet = Instantiate(bullet, this.transform.position, this.transform.rotation);
-		// Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		// currentBullet.GetComponent<Rigidbody2D>().velocity = (mousePos - (Vector2)this.transform.position).normalized * bulletSpeed;
+		GameObject currentBullet = Instantiate(bullet, this.transform.position, this.transform.rotation);
+		Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		currentBullet.GetComponent<Rigidbody2D>().velocity = (mousePos - (Vector2)this.transform.position).normalized * bulletSpeed;
 
 		if(!Input.GetMouseButton(0))
 		{

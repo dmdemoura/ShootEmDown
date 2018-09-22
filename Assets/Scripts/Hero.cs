@@ -9,9 +9,9 @@ public class Hero : MonoBehaviour
     [SerializeField] private Vector2 maxVelocity;
     [SerializeField] private Camera cam;
     [SerializeField] private GameObject projectilePrefab;
-    [SerializeField] private ProjectileData projectileData;
     [Tooltip("Seconds between shots")]
     [SerializeField] private float fireRate;
+    [SerializeField] private float initialProjectileSpeed;
     private Rigidbody2D myRigidbody2D;
     private BoxCollider2D myBoxCollider2d;
     private Bounds cameraBounds;
@@ -28,7 +28,8 @@ public class Hero : MonoBehaviour
     }
     private void Fire()
     {
-        Projectile.Fire(projectilePrefab, projectileData, transform.position, transform.rotation);
+		GameObject currentBullet = Instantiate(projectilePrefab, this.transform.position, this.transform.rotation);
+		currentBullet.GetComponent<Rigidbody2D>().velocity =  Vector2.up * initialProjectileSpeed;
     }
     private float DistanceToDanger(float xOffset)
     {

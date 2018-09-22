@@ -74,7 +74,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -132,8 +132,8 @@ MonoBehaviour:
   cam: {fileID: 0}
   projectilePrefab: {fileID: 1625398254680660, guid: 00050a6fb94a845b583b0db154a36bbf,
     type: 2}
-  projectileData: {fileID: 11400000, guid: c0fdf5c2fe4d8407abf511e6e0fba06c, type: 2}
   fireRate: 0.5
+  initialProjectileSpeed: 1
 --- !u!212 &212367809925071400
 SpriteRenderer:
   m_ObjectHideFlags: 1
