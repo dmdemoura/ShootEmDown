@@ -241,7 +241,6 @@ MonoBehaviour:
   - pos: {fileID: 1651669224}
     arma: {fileID: 0}
     type: 0
-  buttonA: {fileID: 0}
 --- !u!114 &43334018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,6 +313,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moduleHealthBar: {fileID: 2064845668}
+  explosionPrefab: {fileID: 1464724597689026, guid: ce3aa71ec7e724984ae98cf2a3d66924,
+    type: 2}
 --- !u!1 &86898725
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/dmTest2.unity
     guid: 075d339ceda85439abe31edad2d71e4d
+  - enabled: 1
+    path: Assets/Scenes/YouLose.unity
+    guid: 23097cb2b69b54afab9ec9f68f7394da
+  - enabled: 1
+    path: Assets/Scenes/YouWin.unity
+    guid: e9dc9f158859b4406a0e2c3c5663ddde
   m_configObjects: {}

@@ -18,7 +18,8 @@ public class spawnManager : MonoBehaviour {
 		heroisVivos--;
 		PlayerPrefs.SetInt("money",PlayerPrefs.GetInt("money")+10);
 		if(heroisRestantes <= 0 && heroisVivos <= 0){
-			SceneManager.LoadScene("ccena");
+			SceneManager.LoadScene("YouLose");
+			// SceneManager.LoadScene("ccena");
 	
 		}
 		if(heroisVivos <= minHerois){
