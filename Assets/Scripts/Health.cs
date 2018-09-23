@@ -28,7 +28,7 @@ public class Health : MonoBehaviour
                 {
                     health = maxHealth;
                 }
-                else if (value < 0)
+                else if (value <= 0)
                 {
                     health = 0;
                     isDead = true;

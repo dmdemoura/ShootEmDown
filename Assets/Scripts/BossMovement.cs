@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class BossMovement : MonoBehaviour {
 	[SerializeField] private float bossSpeed;
+	private dashHitBox hitBox;
 	private Rigidbody2D myRigidbody2d;
+	[HideInInspector]
+	private bool indoF = false;
+	
 	void Start () {
+		hitBox = FindObjectOfType<dashHitBox>();
 		myRigidbody2d = GetComponent<Rigidbody2D>();
 	}
 	
@@ -13,9 +18,17 @@ public class BossMovement : MonoBehaviour {
 	void Update () {
 		
 		Vector3 v = Camera.main.WorldToViewportPoint(transform.position + Input.acceleration);
-		if (v.x > 0f && v.x < 1f)
-			myRigidbody2d.velocity = new Vector2(Input.acceleration.x * bossSpeed, myRigidbody2d.velocity.y);	
-		else
-			myRigidbody2d.velocity = new Vector2(0f, myRigidbody2d.velocity.y);	
+
+
+		v = Camera.main.WorldToViewportPoint(transform.position );
+		if (v.y < 0f){
+			indoF = true;
+			myRigidbody2d.velocity = new Vector2(0,6);
+		}
+		else if(v.y > 0.8f && indoF == true){
+			indoF = false;
+			hitBox.gameObject.SetActive(false);
+			myRigidbody2d.velocity = new Vector2(0,0);
+		}
 	}
 }

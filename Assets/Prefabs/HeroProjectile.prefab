@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114724256610670204}
   m_Layer: 8
   m_Name: HeroProjectile
-  m_TagString: Untagged
+  m_TagString: HeroesBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

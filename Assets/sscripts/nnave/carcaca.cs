@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //carcaça do boss
 public class carcaca : MonoBehaviour {
@@ -8,6 +9,8 @@ public class carcaca : MonoBehaviour {
 	public float maxHp;
 	private listaArmas lista;
 	public slotArma[] slot;//slots das armas
+
+	public Button buttonA;
 	void Start () {
 		if(PlayerPrefs.GetInt("modeloAtual") != carcacaId)
 			Destroy(gameObject);
@@ -27,6 +30,17 @@ public class carcaca : MonoBehaviour {
 				slot[i].arma.atirar();
 		}
 	}
+
+
+	public void avancarW(){
+		for(int i=0;i<slot.Length;i++){
+			if(slot[i].arma.GetComponent<armaDash>() != null){
+				slot[i].arma.GetComponent<armaDash>().avancarW();
+				break;
+			}
+		}
+	}
+
 
 }
 
