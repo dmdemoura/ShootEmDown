@@ -11,6 +11,13 @@ public class carcaca : MonoBehaviour {
 	public slotArma[] slot;//slots das armas
 
 	public Button buttonA;
+
+	public void matarArma(object sender, System.EventArgs e){
+		int aux =((Health)sender).GetComponent<armaBase>().idNaFase;
+		PlayerPrefs.SetInt("arma"+carcacaId+"-"+aux, 0);
+		Destroy(slot[aux].arma.gameObject);
+		slot[aux].arma = Instantiate(lista.l[0],slot[aux].pos.transform).GetComponent<armaBase>();
+	}
 	void Start () {
 		if(PlayerPrefs.GetInt("modeloAtual") != carcacaId)
 			Destroy(gameObject);
@@ -18,6 +25,9 @@ public class carcaca : MonoBehaviour {
 		for(int i=0;i<slot.Length;i++){
 			GameObject a =lista.l[PlayerPrefs.GetInt("arma"+carcacaId+"-"+i)];
 			slot[i].arma = Instantiate(a,slot[i].pos.transform).GetComponent<armaBase>();
+			slot[i].arma.idNaFase = i;
+			Health healthHeroi = slot[i].arma.GetComponent<Health>();
+			healthHeroi.Death += matarArma;
 		}
 	}
 	

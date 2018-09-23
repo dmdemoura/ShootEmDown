@@ -9,7 +9,7 @@ public class armaDash : armaBase {
 	public void avancarW(){
 		if(!pdAtirar)
 			return;
-		BossMovement aux = bsMv.GetComponent<BossMovement>();
+
 
 		bsMv.GetComponent<Rigidbody2D>().velocity = new Vector2(0,-12);
 		hitBox.gameObject.SetActive(true);

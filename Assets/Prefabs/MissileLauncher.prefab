@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114865559184152030}
   m_Layer: 0
   m_Name: MissileLauncher
-  m_TagString: Untagged
+  m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,6 +86,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a5af757a276c468682926c949526fc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 1464724597689026, guid: ce3aa71ec7e724984ae98cf2a3d66924,
+    type: 2}
 --- !u!114 &114907400935189974
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class armaBase : MonoBehaviour {
+    [HideInInspector]
+    public int idNaFase;
 	public int type;
 	public float cooldown;
 	protected bool pdAtirar = true;
