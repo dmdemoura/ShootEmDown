@@ -63,7 +63,9 @@ armaslot.gameObject.GetComponent<Image>().sprite = dragItem.gameObject.GetCompon
 		for(int i=0;i<carcacas[aux].tipoArma.Length;i++){
 			Debug.Log(PlayerPrefs.GetInt("arma"+i));
 		}
-		PlayerPrefs.SetInt("level",PlayerPrefs.GetInt("level")+1);
+		if(PlayerPrefs.GetInt("level")!= 3)
+			PlayerPrefs.SetInt("level",PlayerPrefs.GetInt("level")+1);
+		
 		SceneManager.LoadScene("dmTest2");
 	}
 

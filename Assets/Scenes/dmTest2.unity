@@ -123,8 +123,6 @@ GameObject:
   - component: {fileID: 43334016}
   - component: {fileID: 43334015}
   - component: {fileID: 43334017}
-  - component: {fileID: 43334019}
-  - component: {fileID: 43334018}
   m_Layer: 0
   m_Name: BossBody1V1
   m_TagString: Untagged
@@ -237,37 +235,6 @@ MonoBehaviour:
   - pos: {fileID: 1651669224}
     arma: {fileID: 0}
     type: 0
---- !u!50 &43334018
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 43334014}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!114 &43334019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 43334014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdccbe388118240e48e2c00bd672956d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &86898725
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,15 +453,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  heroisVivos: 0
   heroisRestantes: 40
   waves:
   - heroi: {fileID: 1546437096908854, guid: ae21214ae83544e8796cf1f833affe5b, type: 2}
-    quant: 1
-    proxWave: 3000
+    quant: 3
+    proxWave: 50
   - heroi: {fileID: 1546437096908854, guid: ae21214ae83544e8796cf1f833affe5b, type: 2}
-    quant: 2
-    proxWave: 3000
-  minHerois: 0
+    quant: 5
+    proxWave: 60
+  minHerois: 5
 --- !u!1 &1012160127
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,7 +491,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
-  heroisRestantes: 40
+  heroisVivos: 0
+  heroisRestantes: 2
   waves:
   - heroi: {fileID: 1546437096908854, guid: ae21214ae83544e8796cf1f833affe5b, type: 2}
     quant: 5
@@ -760,7 +729,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 3
-  heroisRestantes: 40
+  heroisVivos: 0
+  heroisRestantes: 4
   waves:
   - heroi: {fileID: 1546437096908854, guid: ae21214ae83544e8796cf1f833affe5b, type: 2}
     quant: 5
@@ -810,7 +780,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 2
-  heroisRestantes: 40
+  heroisVivos: 0
+  heroisRestantes: 3
   waves:
   - heroi: {fileID: 1546437096908854, guid: ae21214ae83544e8796cf1f833affe5b, type: 2}
     quant: 5
