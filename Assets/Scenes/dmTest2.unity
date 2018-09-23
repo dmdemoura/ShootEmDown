@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   l:
-  - {fileID: 0}
+  - {fileID: 1489134857889066, guid: fe7af8e77bf946145ac2b5be24bbdebf, type: 2}
   - {fileID: 1088252666874894, guid: a43b010a596d14b9099f2fdcb7044ff2, type: 2}
   - {fileID: 1430209603358618, guid: d90b32e883a2e4be198e5c7c21bb8dc3, type: 2}
 --- !u!4 &339812191
@@ -456,12 +456,12 @@ MonoBehaviour:
   heroisRestantes: 40
   waves:
   - heroi: {fileID: 1546437096908854, guid: ae21214ae83544e8796cf1f833affe5b, type: 2}
-    quant: 5
-    proxWave: 30
+    quant: 1
+    proxWave: 3000
   - heroi: {fileID: 1546437096908854, guid: ae21214ae83544e8796cf1f833affe5b, type: 2}
-    quant: 10
-    proxWave: 3
-  minHerois: 1000
+    quant: 2
+    proxWave: 3000
+  minHerois: 0
 --- !u!1 &1012160127
 GameObject:
   m_ObjectHideFlags: 0

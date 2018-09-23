@@ -31,9 +31,11 @@ public class spawnManager : MonoBehaviour {
 		Vector2 pos;
 		for(int i=0;i<waves[id].quant;i++){
 			heroisRestantes--;
+			heroisVivos++;
 			if(heroisRestantes <= 0)
 				break;
-			pos = new Vector2(Random.Range(-2.29f, 2.29f) , 0f);
+
+			pos = Camera.main.ViewportToWorldPoint(new Vector2(Random.Range(0f, 1f) , Random.Range(0f,0.2f)));
 			Instantiate(waves[id].heroi,pos,trans.rotation);
 		}
 	}

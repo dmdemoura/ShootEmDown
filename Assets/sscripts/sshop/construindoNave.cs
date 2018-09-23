@@ -16,8 +16,12 @@ public class construindoNave : MonoBehaviour {
 
 			//procurando o index máximo das armas
 			for(int j=0;j<carcacas[i].tipoArma.Length;j++){
-				if(PlayerPrefs.GetInt("arma"+i+"-"+j) < 0)
+				if(PlayerPrefs.GetInt("arma"+i+"-"+j) < 0){
 					PlayerPrefs.SetInt("arma"+i+"-"+j,0);
+					GameObject armaslot = GameObject.Find("armaSlot"+i+j);
+					GameObject dragItem = GameObject.Find("dragItem0"+PlayerPrefs.GetInt("arma"+i+"-"+j));
+armaslot.gameObject.GetComponent<Image>().sprite = dragItem.gameObject.GetComponent<Image>().sprite;
+				}
 				else{
 					GameObject armaslot = GameObject.Find("armaSlot"+i+j);
 					GameObject dragItem = GameObject.Find("dragItem0"+PlayerPrefs.GetInt("arma"+i+"-"+j));

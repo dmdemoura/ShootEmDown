@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class menuInicial : MonoBehaviour {
 	public GameObject uiMenu;
 	public GameObject uiInstructions;
+	public GameObject uiCredits;
 	public GameObject uiDificuldade;
 	public void buttonStart(){
 		for(int i=0;i<10;i++){
@@ -43,13 +44,14 @@ public class menuInicial : MonoBehaviour {
 		uiDificuldade.SetActive(true);
 	}
 	public void buttonVoltarMenu(){
+		uiCredits.SetActive(false);
 		uiMenu.SetActive(true);
 		uiDificuldade.SetActive(false);
 		uiInstructions.SetActive(false);
 	}
-	public void buttonExit(){
-		Debug.Log("devia sair...");
-		Application.Quit();
+	public void buttonCredits(){
+		uiMenu.SetActive(false);
+		uiCredits.SetActive(true);
 	}
 
 	void Start(){

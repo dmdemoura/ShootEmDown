@@ -16,6 +16,7 @@ public class dragItemShop : MonoBehaviour, IDragHandler,IEndDragHandler, IDropHa
 	private dropItemShop[] dpIS;
 	public void OnDrag(PointerEventData data){
 		trans.position = Input.mousePosition;
+		//trans.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
     public void OnEndDrag(PointerEventData eventData){
 		
