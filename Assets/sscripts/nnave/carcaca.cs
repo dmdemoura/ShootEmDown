@@ -10,7 +10,7 @@ public class carcaca : MonoBehaviour {
 	private listaArmas lista;
 	public slotArma[] slot;//slots das armas
 
-	public Button buttonA;
+
 
 	public void matarArma(object sender, System.EventArgs e){
 		int aux =((Health)sender).GetComponent<armaBase>().idNaFase;
@@ -26,8 +26,9 @@ public class carcaca : MonoBehaviour {
 			GameObject a =lista.l[PlayerPrefs.GetInt("arma"+carcacaId+"-"+i)];
 			slot[i].arma = Instantiate(a,slot[i].pos.transform).GetComponent<armaBase>();
 			slot[i].arma.idNaFase = i;
-			Health healthHeroi = slot[i].arma.GetComponent<Health>();
-			healthHeroi.Death += matarArma;
+			Health healthArma = slot[i].arma.GetComponent<Health>();
+			if(healthArma != null)
+				healthArma.Death += matarArma;
 		}
 	}
 	
