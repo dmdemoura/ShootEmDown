@@ -8,6 +8,11 @@ public class MachineGun : armaBase {
 	[SerializeField]float shootingSpeed, bulletSpeed;
 	Transform target;
 
+	[HideInInspector]
+	public bool cutcene = false;
+
+	private float cutceneCooldown = 5;
+
 	private void Update()
 	{
 		Vector3 pos = Camera.main.WorldToScreenPoint(transform.position);
@@ -15,8 +20,10 @@ public class MachineGun : armaBase {
      	float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
      	transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward); 
 
-		if(pdAtirar && Input.GetMouseButton(0))
+		cutceneCooldown -= Time.deltaTime;
+		if((pdAtirar && Input.GetMouseButton(0)) || (cutcene && cutceneCooldown < 0))
 		{
+			cutceneCooldown = 1f;
 			// Debug.Log("Getting ready...");
 			atirar();
 		}

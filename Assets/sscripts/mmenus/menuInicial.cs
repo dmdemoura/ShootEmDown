@@ -14,7 +14,7 @@ public class menuInicial : MonoBehaviour {
 				PlayerPrefs.SetInt("arma"+i+"-"+j, 0);
 			}
 		}
-		PlayerPrefs.SetInt("money",50);
+		PlayerPrefs.SetInt("money",300);
 		PlayerPrefs.SetInt("level",-1);
 		SceneManager.LoadScene("ccena");
 	}

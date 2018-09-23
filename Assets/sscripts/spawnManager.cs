@@ -16,7 +16,7 @@ public class spawnManager : MonoBehaviour {
 
 	public void heroiMorreu(object sender, System.EventArgs e){
 		heroisVivos--;
-		PlayerPrefs.SetInt("money",PlayerPrefs.GetInt("money")+10);
+		PlayerPrefs.SetInt("money",PlayerPrefs.GetInt("money") +12 -(int)(PlayerPrefs.GetInt("dificuldade")*0.5));
 		if(heroisRestantes <= 0 && heroisVivos <= 0){
 			SceneManager.LoadScene("ccena");
 	

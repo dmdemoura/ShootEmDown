@@ -1008,7 +1008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3599cf5ce1c8ead43ac07cb2f4f7f6dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valor: 0
+  valor: 1000
   armaID: 4
   armaType: 0
 --- !u!114 &888837169
@@ -2030,7 +2030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3599cf5ce1c8ead43ac07cb2f4f7f6dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valor: 0
+  valor: 250
   armaID: 3
   armaType: 0
 --- !u!114 &1484772336
@@ -2505,7 +2505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3599cf5ce1c8ead43ac07cb2f4f7f6dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valor: 10
+  valor: 500
   armaID: 2
   armaType: 0
 --- !u!114 &1881553110
@@ -2765,7 +2765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3599cf5ce1c8ead43ac07cb2f4f7f6dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valor: 5
+  valor: 100
   armaID: 1
   armaType: 0
 --- !u!114 &2146328979

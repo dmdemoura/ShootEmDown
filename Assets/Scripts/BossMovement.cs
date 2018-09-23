@@ -25,7 +25,7 @@ public class BossMovement : MonoBehaviour {
 			indoF = true;
 			myRigidbody2d.velocity = new Vector2(0,6);
 		}
-		else if(v.y > 0.8f && indoF == true){
+		else if(v.y > 0.75f && indoF == true){
 			indoF = false;
 			hitBox.gameObject.SetActive(false);
 			myRigidbody2d.velocity = new Vector2(0,0);
