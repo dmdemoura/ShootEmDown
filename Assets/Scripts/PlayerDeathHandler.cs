@@ -30,11 +30,16 @@ public class PlayerDeathHandler : MonoBehaviour
     {
         int health = 0;
         foreach (Health moduleHealth in moduleHealths)
-            health += moduleHealth.HitPoints;    
+            if (moduleHealth) health += moduleHealth.HitPoints;    
         
         moduleHealthBar.fillAmount = (float) health / (float) moduleMaxHealth;
     }
     private void OnBossDeath(object sender, System.EventArgs e)
+    {
+        // foreach (Health moduleHealth in moduleHealths)
+            // if (moduleHealth) EXPLOSIONS(moduleHealth.
+    }
+    private void EXPLOSIONS(Vector2 position)
     {
 
     }
