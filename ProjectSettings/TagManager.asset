@@ -7,6 +7,7 @@ TagManager:
   - Heroes
   - Enemies
   - Boss
+  - HeroesBullet
   layers:
   - Default
   - TransparentFX
