@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114724256610670204}
   m_Layer: 8
   m_Name: HeroProjectile
-  m_TagString: HeroesBullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,6 +92,8 @@ MonoBehaviour:
   damage: 10
   enemyTag: Enemies
   dieOnHit: 1
+  explosionPrefab: {fileID: 1464724597689026, guid: 8b8288cca467f487fa3c3fb0e652e99a,
+    type: 2}
 --- !u!212 &212002495970049792
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -127,7 +129,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 30d8115c33b714da0a5be6146d8d437c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

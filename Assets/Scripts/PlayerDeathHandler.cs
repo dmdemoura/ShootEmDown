@@ -1,10 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerDeathHandler : MonoBehaviour
 {
     [SerializeField] private Image moduleHealthBar;
-    private Health[] moduleHealths;
+    private List<Health> moduleHealths = new List<Health>();
     private int moduleMaxHealth;
     private void Start()
     {
@@ -13,12 +14,15 @@ public class PlayerDeathHandler : MonoBehaviour
         {
             bossHealth.Death += OnBossDeath;
         }
-        moduleHealths =  GetComponentsInChildren<Health>();
-        foreach (Health moduleHealth in moduleHealths)
+        for (int i = 0; i < transform.childCount; i++)
         {
-            Debug.Log("hai");
-            moduleMaxHealth += moduleHealth.MaxHealth;
-            moduleHealth.HealthChange += UpdateModuleHealthBar;
+            Health moduleHealth = transform.GetChild(i).GetComponentInChildren<Health>();
+            if (moduleHealth)
+            {
+                moduleMaxHealth += moduleHealth.MaxHealth;
+                moduleHealth.HealthChange += UpdateModuleHealthBar;
+                moduleHealths.Add(moduleHealth);
+            }
         }
 
     }

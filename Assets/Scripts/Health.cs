@@ -40,13 +40,13 @@ public class Health : MonoBehaviour
                 {
                     health = 0;
                     isDead = true;
-                    Death(this, EventArgs.Empty);
                 }
                 else
                 {
                     health = value;
                 }
-                HealthChange(this, EventArgs.Empty);
+                if (HealthChange != null) HealthChange(this, EventArgs.Empty);
+                if (isDead && Death != null) Death(this, EventArgs.Empty);
             }
         }
     }

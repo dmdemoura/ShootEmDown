@@ -59,7 +59,7 @@ public class Hero : MonoBehaviour
         for(int i = 0; i < 3; i++)
             distances[i] = DistanceToDanger((i - 1) * playerSizeX);
 
-        Debug.Log("Left: " + distances[left] + "Center: " + distances[center] + " Right: " + distances[right]);
+        // Debug.Log("Left: " + distances[left] + "Center: " + distances[center] + " Right: " + distances[right]);
     
         float playerMaxX = transform.position.x + playerSizeX;
         float playerMinX = transform.position.x - playerSizeX;
@@ -68,7 +68,7 @@ public class Hero : MonoBehaviour
             distances[right] = 0f;
         if (playerMinX <= cameraBounds.min.x)
             distances[left] = 0f;
-        Debug.Log("Left: " + distances[left] + "Center: " + distances[center] + " Right: " + distances[right]);
+        // Debug.Log("Left: " + distances[left] + "Center: " + distances[center] + " Right: " + distances[right]);
 
         int furthestIndex = center;
         float furthestDistance = distances[furthestIndex];
@@ -89,7 +89,7 @@ public class Hero : MonoBehaviour
         }
 
 
-        Debug.Log("Going:"+(furthestIndex-1));
+        // Debug.Log("Going:"+(furthestIndex-1));
         if (closestDistance < minSafeDistanceToAttack)
             myRigidbody2D.velocity = new Vector2((furthestIndex - 1) * maxVelocity.x, myRigidbody2D.velocity.y);
         else
