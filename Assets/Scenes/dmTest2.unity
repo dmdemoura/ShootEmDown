@@ -453,15 +453,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  heroisVivos: 0
   heroisRestantes: 40
   waves:
   - heroi: {fileID: 1546437096908854, guid: ae21214ae83544e8796cf1f833affe5b, type: 2}
-    quant: 1
-    proxWave: 3000
+    quant: 3
+    proxWave: 50
   - heroi: {fileID: 1546437096908854, guid: ae21214ae83544e8796cf1f833affe5b, type: 2}
-    quant: 2
-    proxWave: 3000
-  minHerois: 0
+    quant: 5
+    proxWave: 60
+  minHerois: 5
 --- !u!1 &1012160127
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,7 +491,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
-  heroisRestantes: 40
+  heroisVivos: 0
+  heroisRestantes: 2
   waves:
   - heroi: {fileID: 1546437096908854, guid: ae21214ae83544e8796cf1f833affe5b, type: 2}
     quant: 5
@@ -727,7 +729,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 3
-  heroisRestantes: 40
+  heroisVivos: 0
+  heroisRestantes: 4
   waves:
   - heroi: {fileID: 1546437096908854, guid: ae21214ae83544e8796cf1f833affe5b, type: 2}
     quant: 5
@@ -777,7 +780,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 2
-  heroisRestantes: 40
+  heroisVivos: 0
+  heroisRestantes: 3
   waves:
   - heroi: {fileID: 1546437096908854, guid: ae21214ae83544e8796cf1f833affe5b, type: 2}
     quant: 5
