@@ -4,13 +4,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class construindoNave : MonoBehaviour {
-
+	public GameObject moneyText;
 	public modelo[] carcacas;
 
+	public void atualizarTextMoney(){
+		moneyText.GetComponent<Text>().text = "Money: "+PlayerPrefs.GetInt("money");
+	}
 	void Start(){
 		if(PlayerPrefs.GetInt("modeloAtual") < 0){
 			PlayerPrefs.SetInt("modeloAtual",0);
 		}
+
+		atualizarTextMoney();
 
 		for(int i= 0;i<carcacas.Length;i++){
 
