@@ -124,11 +124,12 @@ GameObject:
   - component: {fileID: 43334015}
   - component: {fileID: 43334017}
   - component: {fileID: 43334018}
-  - component: {fileID: 43334019}
   - component: {fileID: 43334020}
+  - component: {fileID: 43334021}
+  - component: {fileID: 43334019}
   m_Layer: 0
   m_Name: BossBody1V1
-  m_TagString: Boss
+  m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -250,8 +251,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossSpeed: 5
---- !u!61 &43334019
-BoxCollider2D:
+--- !u!58 &43334019
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -262,19 +263,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.833, y: 3.3439999}
-    newSize: {x: 28.330002, y: 33.44}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0.05, y: -0.3}
   serializedVersion: 2
-  m_Size: {x: 2.833, y: 3.3439999}
-  m_EdgeRadius: 0
+  m_Radius: 0.4
 --- !u!50 &43334020
 Rigidbody2D:
   serializedVersion: 4
@@ -295,6 +286,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &43334021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 43334014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e0022f63539d4f348e8bcde6a0ad467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 6000
+  maxHealth: 6000
 --- !u!1 &86898725
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,7 +615,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1012160127}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a09036445ffa1240abc9393b1a978b6, type: 3}
   m_Name: 
@@ -849,7 +853,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1707830411}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a09036445ffa1240abc9393b1a978b6, type: 3}
   m_Name: 
@@ -900,7 +904,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1904408688}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a09036445ffa1240abc9393b1a978b6, type: 3}
   m_Name: 

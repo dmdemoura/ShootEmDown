@@ -5,6 +5,7 @@ public class DamageOnHit : MonoBehaviour
     [SerializeField] private int damage;
     [SerializeField] protected string enemyTag;
     [SerializeField] private bool dieOnHit;
+    [SerializeField] private GameObject explosionPrefab;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag(enemyTag))
@@ -15,7 +16,10 @@ public class DamageOnHit : MonoBehaviour
             else
                 Debug.LogWarning("DamageOnHit collided with enemy that has no health component");
             if (dieOnHit)
+            {
+                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
                 Destroy(this.gameObject);
+            }
         }
     }
 }

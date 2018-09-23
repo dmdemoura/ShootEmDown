@@ -114,6 +114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a5af757a276c468682926c949526fc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 1464724597689026, guid: ce3aa71ec7e724984ae98cf2a3d66924,
+    type: 2}
 --- !u!114 &114741367651817238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -133,6 +135,7 @@ MonoBehaviour:
     type: 2}
   fireRate: 0.5
   initialProjectileSpeed: 7
+  minSafeDistanceToAttack: 10
 --- !u!212 &212367809925071400
 SpriteRenderer:
   m_ObjectHideFlags: 1

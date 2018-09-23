@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class DestroyOnDeath : MonoBehaviour
 {
+    [SerializeField] private GameObject explosionPrefab;
     private void Start()
     {
         Health health = GetComponent<Health>();
@@ -13,6 +14,7 @@ public class DestroyOnDeath : MonoBehaviour
     }
     private void OnDeath(object sender, EventArgs e)
     {
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

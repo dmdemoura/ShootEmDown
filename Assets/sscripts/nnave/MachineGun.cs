@@ -17,7 +17,7 @@ public class MachineGun : armaBase {
 
 		if(pdAtirar && Input.GetMouseButton(0))
 		{
-			Debug.Log("Getting ready...");
+			// Debug.Log("Getting ready...");
 			atirar();
 		}
 	}
@@ -30,7 +30,7 @@ public class MachineGun : armaBase {
 
 	void MachineGunShot()
 	{
-		Debug.Log("Take this!");
+		// Debug.Log("Take this!");
 
 		GameObject currentBullet = Instantiate(bullet, this.transform.position, this.transform.rotation);
 		Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -39,7 +39,7 @@ public class MachineGun : armaBase {
 		if(!Input.GetMouseButton(0))
 		{
 			pdAtirar = true;
-			Debug.Log("Gone.");
+			// Debug.Log("Gone.");
 			CancelInvoke();
 		}
 	}
