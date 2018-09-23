@@ -88,7 +88,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!114 &114348746727259152
 MonoBehaviour:
@@ -132,7 +132,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1625398254680660, guid: 00050a6fb94a845b583b0db154a36bbf,
     type: 2}
   fireRate: 0.5
-  initialProjectileSpeed: 1
+  initialProjectileSpeed: 7
 --- !u!212 &212367809925071400
 SpriteRenderer:
   m_ObjectHideFlags: 1

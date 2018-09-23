@@ -70,8 +70,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0022f63539d4f348e8bcde6a0ad467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
-  maxHealth: 1000
+  health: 2000
+  maxHealth: 2000
 --- !u!114 &114216864905008822
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -98,7 +98,7 @@ MonoBehaviour:
   cooldown: 0
   bullet: {fileID: 1625398254680660, guid: e4a35d98de5254dc080172ce72d97461, type: 2}
   shootingSpeed: 0.2
-  bulletSpeed: 3
+  bulletSpeed: 10
 --- !u!212 &212931641502353860
 SpriteRenderer:
   m_ObjectHideFlags: 1
