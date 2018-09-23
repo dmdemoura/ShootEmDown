@@ -7,6 +7,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class dragItemShop : MonoBehaviour, IDragHandler,IEndDragHandler, IDropHandler {
 
+	public int valor;
 	public int armaID;
 	public int armaType;
 	Transform trans;
@@ -33,6 +34,11 @@ public class dragItemShop : MonoBehaviour, IDragHandler,IEndDragHandler, IDropHa
 			
 			RectTransform invPanel =dpIS[i].transform as RectTransform;
 			if(RectTransformUtility.RectangleContainsScreenPoint(invPanel,Input.mousePosition)){
+				if(PlayerPrefs.GetInt("money") < valor)
+					break;
+				
+				PlayerPrefs.SetInt("money",PlayerPrefs.GetInt("money")-valor);
+				boss.atualizarTextMoney();
 				Debug.Log(dropped.armaID);
 				invPanel.gameObject.GetComponent<Image>().sprite = gameObject.GetComponent<Image>().sprite;
 				boss.colocarArma(dropped.armaID,dpIS[i].slotId,dropped.armaType);

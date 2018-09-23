@@ -16,7 +16,7 @@ public class spawnManager : MonoBehaviour {
 
 	public void heroiMorreu(object sender, System.EventArgs e){
 		heroisVivos--;
-		Debug.Log("pizza");
+		PlayerPrefs.SetInt("money",PlayerPrefs.GetInt("money")+10);
 		if(heroisRestantes <= 0 && heroisVivos <= 0){
 			SceneManager.LoadScene("ccena");
 	
