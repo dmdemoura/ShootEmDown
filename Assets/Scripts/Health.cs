@@ -36,17 +36,17 @@ public class Health : MonoBehaviour
                 {
                     health = maxHealth;
                 }
-                else if (value < 0)
+                else if (value <= 0)
                 {
                     health = 0;
                     isDead = true;
-                    Death(this, EventArgs.Empty);
                 }
                 else
                 {
                     health = value;
                 }
-                HealthChange(this, EventArgs.Empty);
+                if (HealthChange != null) HealthChange(this, EventArgs.Empty);
+                if (isDead && Death != null) Death(this, EventArgs.Empty);
             }
         }
     }
