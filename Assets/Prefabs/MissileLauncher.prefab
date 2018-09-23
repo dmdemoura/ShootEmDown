@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212851620410685976}
   - component: {fileID: 58441291412105326}
   - component: {fileID: 114714519906895476}
+  - component: {fileID: 114907400935189974}
+  - component: {fileID: 114865559184152030}
   m_Layer: 0
   m_Name: MissileLauncher
   m_TagString: Untagged
@@ -71,8 +73,32 @@ MonoBehaviour:
   type: 0
   cooldown: 0
   bullet: {fileID: 1625398254680660, guid: 6daf08f841aac4a168faaf2ee98debba, type: 2}
-  shootingSpeed: 0.5
-  bulletSpeed: 2
+  shootingSpeed: 1
+  bulletSpeed: 3
+--- !u!114 &114865559184152030
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1430209603358618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a5af757a276c468682926c949526fc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114907400935189974
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1430209603358618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e0022f63539d4f348e8bcde6a0ad467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 2000
+  maxHealth: 2000
 --- !u!212 &212851620410685976
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -14,16 +14,16 @@ public class spawnManager : MonoBehaviour {
 	float proxWave = 0;
 	private Transform trans;
 
-	public void heroiMorreu(){
+	public void heroiMorreu(object sender, System.EventArgs e){
 		heroisVivos--;
+		Debug.Log("pizza");
 		if(heroisRestantes <= 0 && heroisVivos <= 0){
 			SceneManager.LoadScene("ccena");
 	
 		}
-
-		
 		if(heroisVivos <= minHerois){
 			spawnWave(Random.Range(0,waves.Length-1));
+			Debug.Log("heroiMorreu spawna nova wave");
 		}
 	}
 	void spawnWave(int id){
@@ -34,7 +34,9 @@ public class spawnManager : MonoBehaviour {
 			heroisRestantes--;
 			heroisVivos++;
 			pos = Camera.main.ViewportToWorldPoint(new Vector2(Random.Range(0f, 1f) , Random.Range(0f,0.2f)));
-			Instantiate(waves[id].heroi,pos,trans.rotation);
+			GameObject heroi = Instantiate(waves[id].heroi,pos,trans.rotation);
+			Health healthHeroi = heroi.GetComponent<Health>();
+			healthHeroi.Death += heroiMorreu;
 		}
 	}
 	void Start(){
@@ -51,7 +53,10 @@ public class spawnManager : MonoBehaviour {
 	void Update(){
 		proxWave -= Time.deltaTime;
 		if(proxWave <= 0)
+		{
 			spawnWave(Random.Range(0,waves.Length-1));
+			Debug.Log("Update spawna nova wave");
+		}
 	}
 }
 

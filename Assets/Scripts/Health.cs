@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    private spawnManager lv;
     [SerializeField] private int health;
     [SerializeField] private int maxHealth;
+    private bool isDead = false;
     public event EventHandler Death;
     public float Percent
     {
@@ -13,10 +13,7 @@ public class Health : MonoBehaviour
         {
             return (float) health / (float) maxHealth;
         }
-    }
-    private void Start(){
-        lv = FindObjectOfType<spawnManager>().GetComponent<spawnManager>();
-    }
+    } 
     public int HitPoints
     {
         get
@@ -25,19 +22,22 @@ public class Health : MonoBehaviour
         }
         set
         {
-            if (value > maxHealth)
+            if (!isDead)
             {
-                health = maxHealth;
-            }
-            else if (value < 0)
-            {
-                health = 0;
-                lv.heroiMorreu();
-                Death(this, EventArgs.Empty);
-            }
-            else
-            {
-                health = value;
+                if (value > maxHealth)
+                {
+                    health = maxHealth;
+                }
+                else if (value < 0)
+                {
+                    health = 0;
+                    isDead = true;
+                    Death(this, EventArgs.Empty);
+                }
+                else
+                {
+                    health = value;
+                }
             }
         }
     }

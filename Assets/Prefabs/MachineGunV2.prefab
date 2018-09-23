@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212931641502353860}
   - component: {fileID: 58766332381895266}
   - component: {fileID: 114893890800120244}
+  - component: {fileID: 114074601663183246}
+  - component: {fileID: 114216864905008822}
   m_Layer: 0
   m_Name: MachineGunV2
   m_TagString: Untagged
@@ -57,6 +59,30 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.34719998
+--- !u!114 &114074601663183246
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1088252666874894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e0022f63539d4f348e8bcde6a0ad467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000
+  maxHealth: 1000
+--- !u!114 &114216864905008822
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1088252666874894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a5af757a276c468682926c949526fc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114893890800120244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -71,7 +97,7 @@ MonoBehaviour:
   type: 0
   cooldown: 0
   bullet: {fileID: 1625398254680660, guid: e4a35d98de5254dc080172ce72d97461, type: 2}
-  shootingSpeed: 0.1
+  shootingSpeed: 0.2
   bulletSpeed: 3
 --- !u!212 &212931641502353860
 SpriteRenderer:
