@@ -14,8 +14,8 @@ public class BossMovement : MonoBehaviour {
 		
 		Vector3 v = Camera.main.WorldToViewportPoint(transform.position + Input.acceleration);
 		if (v.x > 0f && v.x < 1f)
-			myRigidbody2d.velocity = new Vector2(Input.acceleration.x * bossSpeed, 0f);	
+			myRigidbody2d.velocity = new Vector2(Input.acceleration.x * bossSpeed, myRigidbody2d.velocity.y);	
 		else
-			myRigidbody2d.velocity = new Vector2(0f, 0f);	
+			myRigidbody2d.velocity = new Vector2(0f, myRigidbody2d.velocity.y);	
 	}
 }
