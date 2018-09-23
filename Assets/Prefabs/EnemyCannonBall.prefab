@@ -22,10 +22,10 @@ GameObject:
   - component: {fileID: 212002495970049792}
   - component: {fileID: 58112773197847392}
   - component: {fileID: 50853853333036818}
-  - component: {fileID: 114724256610670204}
-  m_Layer: 8
-  m_Name: HeroProjectile
-  m_TagString: Untagged
+  - component: {fileID: 114324221055339354}
+  m_Layer: 9
+  m_Name: EnemyCannonBall
+  m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,7 +78,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
---- !u!114 &114724256610670204
+--- !u!114 &114324221055339354
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,8 +89,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 631ba0c1128484ace80ecaa918afbb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
-  enemyTag: Enemies
+  damage: 50
+  enemyTag: Heroes
   dieOnHit: 1
   explosionPrefab: {fileID: 1464724597689026, guid: 8b8288cca467f487fa3c3fb0e652e99a,
     type: 2}
@@ -129,8 +129,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 30d8115c33b714da0a5be6146d8d437c, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 478c57d89cc044c6ca776c54deb1614a, type: 3}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

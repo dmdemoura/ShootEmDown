@@ -6,7 +6,15 @@ public class Health : MonoBehaviour
     [SerializeField] private int health;
     [SerializeField] private int maxHealth;
     private bool isDead = false;
+    public event EventHandler HealthChange;
     public event EventHandler Death;
+    public int MaxHealth
+    {
+        get
+        {
+            return maxHealth;
+        }
+    }
     public float Percent
     {
         get
@@ -38,6 +46,7 @@ public class Health : MonoBehaviour
                 {
                     health = value;
                 }
+                HealthChange(this, EventArgs.Empty);
             }
         }
     }

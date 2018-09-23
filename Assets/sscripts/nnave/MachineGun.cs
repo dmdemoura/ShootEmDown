@@ -32,7 +32,7 @@ public class MachineGun : armaBase {
 	{
 		// Debug.Log("Take this!");
 
-		GameObject currentBullet = Instantiate(bullet, this.transform.position, this.transform.rotation);
+		GameObject currentBullet = Instantiate(bullet, this.transform.position, Quaternion.Euler(0f,0f,-90f)  * this.transform.rotation);
 		Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		currentBullet.GetComponent<Rigidbody2D>().velocity = (mousePos - (Vector2)this.transform.position).normalized * bulletSpeed;
 
