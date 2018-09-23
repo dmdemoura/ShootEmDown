@@ -80,7 +80,7 @@ armaslot.gameObject.GetComponent<Image>().sprite = dragItem.gameObject.GetCompon
 
 	void Update(){
 		if(Input.GetKeyDown(KeyCode.Escape))
-			trocarmodelo((PlayerPrefs.GetInt("modeloAtual")+1) % 2);
+			trocarmodelo((PlayerPrefs.GetInt("modeloAtual")+1) % 1);
 		 if (Input.GetKeyDown("space"))
 		 	entrarBatalha();
 	}
